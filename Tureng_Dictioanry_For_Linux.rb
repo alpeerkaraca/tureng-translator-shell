@@ -6,16 +6,20 @@ loop do
     if selection == ("01" && "1")
         puts "Please type the word you want to search."
         words = gets.chomp
-        Launchy.open("https://tureng.com/en/turkish-english/#{words}")
-        puts ">>>>>>>>>>>>>>>>>Meaning of the word<<<<<<<<<<<<<<<\n\n".upcase
+        
+        puts ">>>>>>>>>>>>>>>>>Meaning of the word<<<<<<<<<<<<<<<".upcase
         system "wikit #{words}"
-
+        Launchy.open("https://tureng.com/en/turkish-english/#{words}")
+        
+        
     elsif selection == ("02" && "2")
         puts "Lütfen aratmak istediğiniz sözcüğü yazın."
         words = gets.chomp
+        
         print ">>>>>>>>>>>>>>Kelimenin anlamı<<<<<<<<<<<<<<<<<<".upcase
         system"wikit -l tr #{words}"        
         Launchy.open("https://tureng.com/en/turkish-english/#{words}")
+        
     else
         return puts "[EN]You've made empty or wrong selection.Program is closing.[TR]Boş ya da yanlış seçim yaptınız. Program kapatılıyor."
         break
